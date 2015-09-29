@@ -4,17 +4,20 @@
   </div>
   <main>
     <div class="jumbotron">
-      <h1>'Allo, 'Allo!</h1>
-      <p class="lead">
-        <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-        Always a pleasure scaffolding your apps.
-      </p>
-      <p class="animated infinite" ng-class="main.classAnimation">
-        <a class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</a>
-      </p>
-      <p>
-        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']" />
-      </p>
+      <h2>Lets test our tiles...</h2>
+      <!-- Test tile styling -->
+      <div class="result-tile">
+      <img src="https://i.scdn.co/image/966e3af22dd85c5b9573b0e908a93403c5b9a24e" alt="test">
+        <p>Eyelid Movies</p>
+      </div>
+      <div class="result-tile">
+      <img src="https://i.scdn.co/image/a37abcaf9781ac3f94070bb4dfac80bff7769111" alt="test">
+        <p>Nightlife</p>
+      </div>
+      <div class="result-tile">
+      <img src="https://i.scdn.co/image/a19ed66a3b78c8064a8553d6668e64b3ed0d1083" alt="test">
+        <p>Voices</p>
+      </div>
     </div>
 
     <div class="col" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
