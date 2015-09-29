@@ -4,6 +4,7 @@
   angular
     .module('searchify')
     .controller('MainController', MainController);
+  
 
   /** @ngInject */
   function MainController($timeout, webDevTec, toastr) {
@@ -36,4 +37,5 @@
       });
     }
   }
+
 })();
