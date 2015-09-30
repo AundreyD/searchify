@@ -1,6 +1,8 @@
 <div class="container">
   <div>
-    <acme-navbar creationDate="main.creationDate" />
+    <nav class="navbar">
+      <a>Searchify</a>
+    </nav>
   </div>
   <main>
     <div class="jumbotron">
@@ -20,15 +22,9 @@
       </div>
     </div>
 
-    <div class="col" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-        <div class="caption">
-          <h3>{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-          <p><a ng-href="{{ awesomeThing.url }}">{{ awesomeThing.url }}</a></p>
-        </div>
-      </div>
+    <div class="result-tile" ng-repeat="album in main.albums">
+      <img ng-src="{{ album.images[1].url }}" alt="{{ album.name }}">
+      <p>{{ album.name }}</p>
     </div>
   </main>
 </div>
