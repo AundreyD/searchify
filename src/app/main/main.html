@@ -6,25 +6,15 @@
   </div>
   <main>
     <div class="jumbotron">
-      <h2>Lets test our tiles...</h2>
-      <!-- Test tile styling -->
-      <div class="result-tile">
-      <img src="https://i.scdn.co/image/966e3af22dd85c5b9573b0e908a93403c5b9a24e" alt="test">
-        <p>Eyelid Movies</p>
-      </div>
-      <div class="result-tile">
-      <img src="https://i.scdn.co/image/a37abcaf9781ac3f94070bb4dfac80bff7769111" alt="test">
-        <p>Nightlife</p>
-      </div>
-      <div class="result-tile">
-      <img src="https://i.scdn.co/image/a19ed66a3b78c8064a8553d6668e64b3ed0d1083" alt="test">
-        <p>Voices</p>
-      </div>
+      <h2>So I heard you like albums? Let's find some.</h2>
+      <input type="text" placeholder="Search an Album...">
     </div>
 
-    <div class="result-tile" ng-repeat="album in main.albums">
-      <img ng-src="{{ album.images[1].url }}" alt="{{ album.name }}">
-      <p>{{ album.name }}</p>
+    <div class="result-tile" ng-repeat="album in main.albumList.albums.items">
+      <a ng-ref="{{ album.external_urls.spotify }}">
+        <img ng-src="{{ album.images[1].url }}" alt="{{ album.name }}">
+        <p class="dude">{{ album.name }}</p>
+      </a>
     </div>
   </main>
 </div>

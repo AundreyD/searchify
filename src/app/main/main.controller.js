@@ -10,13 +10,14 @@
   function MainController(albumSearch) {
     var vm = this;
 
-    vm.albums = [];
+    vm.albumList = [];
 
     getAlbumSearch();
 
     function getAlbumSearch() {
-      vm.albums = albumSearch.getAlbums();
+      vm.albumList = albumSearch.get(function(response) {
+        return response.albums.items;
+      });
     }
   }
-
 })();
