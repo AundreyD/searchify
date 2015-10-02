@@ -4,16 +4,18 @@
       <a>Searchify</a>
     </nav>
   </div>
-  <main>
-    <div class="jumbotron">
+  <div class="jumbotron">
       <h2>So I heard you like albums? Let's find some.</h2>
       <input type="text" placeholder="Search an Album...">
+      <!-- Fix this hackish br later --><br>
+      <button class="btn" type="submit">Search Albums</button>
     </div>
-
+  <main>
+    <h2>Search for: 'test'</h2>
     <div class="result-tile" ng-repeat="album in main.albumList.albums.items">
       <a ng-ref="{{ album.external_urls.spotify }}">
         <img ng-src="{{ album.images[1].url }}" alt="{{ album.name }}">
-        <p class="dude">{{ album.name }}</p>
+        <p>{{ album.name }}</p>
       </a>
     </div>
   </main>
