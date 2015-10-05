@@ -10,12 +10,15 @@
   function MainController(albumSearch) {
     var vm = this;
 
+    vm.searchIn = {
+      q: ''
+    };
     vm.albumList = [];
 
     getAlbumSearch();
 
     function getAlbumSearch() {
-      vm.albumList = albumSearch.get(function(response) {
+      vm.albumList = albumSearch.query({qry: vm.searchIn.q}, function(response) {
         return response.albums.items;
       });
     }
