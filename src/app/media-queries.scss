@@ -1,0 +1,48 @@
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .grid {
+    margin: 0;
+  }
+
+  .result-tile {
+    width: 27%;
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+@media only screen and (min-width: 199px) and (max-width: 767px) {
+  .grid {
+    margin: 0;
+  }
+    
+  .result-tile {
+    width: 45%;
+
+    p {
+      font-size: 12px;
+	}
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
+  .grid {
+    margin: 0;
+  }
+
+  .result-tile {
+    width: 19%;
+  }
+}
+@media only screen and (min-width: 199px) and (max-width: 767px) and (orientation: landscape) {
+  .grid {
+    margin: 0;
+  }
+
+  .result-tile {
+    width: 27%;
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
