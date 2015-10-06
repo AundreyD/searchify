@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: "Montserrat";
-    src: url(/assets/fonts/Montserrat-Regular.ttf);
+    src: url(assets/fonts/Montserrat-Regular.ttf);
 }
 
 html,
@@ -88,7 +88,7 @@ main {
 
 .jumbotron {
   @include text-shadow;
-  background: url(/assets/images/crowd.jpg) no-repeat;
+  background: url(assets/images/crowd.jpg) no-repeat;
   background-color: $brand-grey;
   background-position: 50% 80%;
   background-size: cover;
@@ -200,7 +200,7 @@ main {
 }
 
 #konami {
-  background: url(/assets/images/konami.gif) no-repeat;
+  background: url(assets/images/konami.gif) no-repeat;
   background-size: contain;
   display: none;
   content: "";
