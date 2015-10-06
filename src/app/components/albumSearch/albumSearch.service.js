@@ -3,21 +3,14 @@
 
   angular
     .module('searchify')
-    .factory('albumSearch', albumSearch);
-
-  /** @ngInject */
-  function albumSearch($resource) {
-    return $resource('https://api.spotify.com/v1/search?q=:qry' + '&type=album&type=artist',
-    	{
-    		qry: '@qry'
-    	}, 
-    	{
-    		get: {
-    			method: 'GET',
-    			isArray: false
-    		}
-    	}
-    );
-  }
+      .service('albumSearch', ['$http', function($http) {
+        this.query = function(query) {
+          var plan = $http({
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/search?q=' + query + '&type=album&type=artist'
+          });
+          return plan;
+        };
+  }]);
 
 })();
