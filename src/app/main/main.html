@@ -5,7 +5,7 @@
     </nav>
   </div>
   <div class="jumbotron">
-    <form>
+    <form name="search" ng-submit="main.getAlbumSearch()">
       <h2>So I heard you like albums? Let's find some.</h2>
       <input type="text" placeholder="Search an Album..." ng-model="main.searchIn.q">
       <!-- Fix this hackish br later --><br>

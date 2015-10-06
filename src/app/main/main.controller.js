@@ -4,7 +4,7 @@
   angular
     .module('searchify')
     .controller('MainController', ['albumSearch', MainController]);
-  
+
 
   /** @ngInject */
   function MainController(albumSearch) {
@@ -15,12 +15,10 @@
     };
     vm.albumList = [];
 
-    getAlbumSearch();
-
-    function getAlbumSearch() {
-      vm.albumList = albumSearch.query({qry: vm.searchIn.q}, function(response) {
-        return response.albums.items;
+     vm.getAlbumSearch = function() {
+      vm.albumList = albumSearch.query(vm.searchIn.q).success(function(data) {
+        vm.albumList = data;
       });
-    }
+    };
   }
 })();
