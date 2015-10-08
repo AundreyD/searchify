@@ -95,7 +95,7 @@ main {
   border-bottom: $green-line;
   color: white;
   margin-bottom: 10px;
-  padding: 140px 60px;
+  padding: 40px 60px 140px;
   text-align: center;
 
   input[type="text"] {
@@ -113,6 +113,18 @@ main {
   input[type="text"].focus {
     border: $green-line;
     box-shadow: inset 1px 1px 2px 0 $shadow-grey-light;
+  }
+}
+
+.selection {
+  margin: 70px 5px;
+
+  .select-artist {
+    @include selection-tile("/assets/images/users.png", 50%, 29%, 25px);
+  }
+
+  .select-album {
+    @include selection-tile("/assets/images/music.png", 32%, 27%, 20px);
   }
 }
 

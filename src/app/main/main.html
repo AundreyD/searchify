@@ -7,7 +7,16 @@
   <div class="jumbotron">
     <div id="konami"></div>
     <form name="search" ng-submit="main.getAlbumSearch()">
-      <h2>So I heard you like albums? Let's find some.</h2>
+      <h2>So I heard you like...</h2>
+      <div class="selection">
+        <a class="select-artist">
+          <label>Artists</label>
+        </a>
+        <a class="select-album">
+          <label>Albums</label>
+        </a>
+      </div>
+      <h2>Let's find some.</h2>
       <input type="text" placeholder="Search an Album..." ng-model="main.searchIn.q">
       <!-- Fix this hackish br later --><br>
       <button class="btn" type="submit">Search Albums</button>

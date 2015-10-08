@@ -12,3 +12,19 @@
 @mixin text-shadow {
     text-shadow: 3px 3px 0 rgba(0, 0, 0, .5), -1px -1px 0 rgba(0, 0, 0, .5), 1px -1px 0 rgba(0, 0, 0, .5), -1px 1px 0 rgba(0, 0, 0, .5), 1px 1px 0 rgba(0, 0, 0, .5);
 }
+
+@mixin selection-tile($img-url, $perX, $perY, $l) {
+	background: url($img-url) no-repeat;
+    background-size: 80%;
+    background-position: $perX $perY;
+    border: 2px solid white;
+    margin: 20px;
+    padding: 50px 60px 50px 40px;
+    position: relative;
+
+    label {
+      bottom: 4px;
+      left: $l;
+      position: absolute;
+    }
+}
