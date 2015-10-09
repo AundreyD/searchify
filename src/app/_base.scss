@@ -99,33 +99,40 @@ main {
   text-align: center;
 
   input[type="text"] {
-    border: solid 2px $brand-grey;
+    background: rgba(0, 0, 0, .6);
+    border: solid 2px white;
     border-radius: 5px;
-    box-shadow: inset 1px 1px 2px 0 $shadow-grey-dark;
+    color: white;
     font-family: "Montserrat";
     margin: 20px 0;
     padding: 10px;
-    transition: box-shadow .3s, border .3s;
+    transition: border .3s;
     width: 50%;
   }
 
   input[type="text"]:focus,
   input[type="text"].focus {
     border: $green-line;
-    box-shadow: inset 1px 1px 2px 0 $shadow-grey-light;
   }
 }
 
-.selection {
-  margin: 70px 5px;
+select {
+  appearance: none;
+  background: rgba(0, 0, 0, .6);
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-family: "Montserrat";
+  font-size: 14px;
+  margin: 35px 5px;
+  padding: 8px 28px 8px 33px;
+  transition: border .3s;
+  width: 130px;
+}
 
-  .select-artist {
-    @include selection-tile("/assets/images/users.png", 50%, 29%, 25px);
-  }
-
-  .select-album {
-    @include selection-tile("/assets/images/music.png", 32%, 27%, 20px);
-  }
+select:focus,
+select.focus {
+  border: $green-line;
 }
 
 .btn {
@@ -192,6 +199,12 @@ main {
     left: 0;
     padding-left: 5px;
     position: absolute;
+    text-align: left;
+
+    small {
+      clear: left;
+      display: block;
+    }
   }
 }
 

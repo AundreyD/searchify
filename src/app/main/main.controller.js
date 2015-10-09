@@ -3,21 +3,28 @@
 
   angular
     .module('searchify')
-    .controller('MainController', ['albumSearch', MainController]);
+    .controller('MainController', ['itemSearch', MainController]);
 
 
   /** @ngInject */
-  function MainController(albumSearch) {
+  function MainController(itemSearch) {
     var vm = this;
 
+    vm.selOptions = [{
+      value: 'album',
+      label: 'Albums'
+    }, {
+      value: 'track',
+      label: 'Tracks'
+    }];
     vm.searchIn = {
       q: ''
     };
-    vm.albumList = [];
+    vm.itemList = [];
 
-     vm.getAlbumSearch = function() {
-      vm.albumList = albumSearch.query(vm.searchIn.q).success(function(data) {
-        vm.albumList = data;
+    vm.getItemSearch = function() {
+      vm.itemList = itemSearch.query(vm.searchIn.q, vm.querySelect.value).success(function(data) {
+        vm.itemList = data;
       });
     };
   }
