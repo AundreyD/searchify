@@ -8,11 +8,15 @@
     <div id="konami"></div>
       <h2>So I heard you like...</h2>
       <select ng-model="main.querySelect"
-              ng-options="option.label for option in main.selOptions">
+              ng-options="option.label for option in main.selOptions"
+              required>
       </select>
       <h2>Let's find some.</h2>
       <form name="search" ng-submit="main.getItemSearch()">
-        <input type="text" placeholder="Search for {{ main.querySelect.label }}..." ng-model="main.searchIn.q">
+        <input type="text" 
+               placeholder="Search for {{ main.querySelect.label }}..." 
+               ng-model="main.searchIn.q" 
+               required>
         <!-- Fix this hackish br later --><br>
         <button class="btn" type="submit">Search Albums</button>
       </form>
@@ -42,9 +46,10 @@
     </a>
 
     <a ng-switch-default>
-    {{ main.querySelect }}
       <h1>Please select Album or Track above.</h1>
     </a>
-
+    
+    <button ng-click="main.getNextItemSearch()">test</button>
+    <h2>{{ main.searchIn.fail }}</h2>
   </div>
 </main>

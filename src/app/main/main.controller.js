@@ -18,13 +18,33 @@
       label: 'Tracks'
     }];
     vm.searchIn = {
-      q: ''
+      q: '',
+      fail: ''
     };
     vm.itemList = [];
 
     vm.getItemSearch = function() {
-      vm.itemList = itemSearch.query(vm.searchIn.q, vm.querySelect.value).success(function(data) {
+      vm.searchIn.fail = '';
+      vm.itemList = itemSearch.getItem(vm.searchIn.q, vm.querySelect.value)
+      .success(function(data) {
         vm.itemList = data;
+      })
+      .error(function() {
+        console.log('Error fetching data');
+        vm.searchIn.fail = 'Sorry, we had a problem talking to the server';
+      });
+    };
+
+    vm.getNextItemSearch = function() {
+      vm.searchIn.fail = '';
+      //TODO: incorporate way to check item type
+      vm.itemList = itemSearch.getNext(vm.itemList.albums.next)
+      .success(function(data) {
+        vm.itemList = data;
+      })
+      .error(function() {
+        console.log('Error fetching data');
+        vm.searchIn.fail = 'Sorry, we had a problem talking to the server';
       });
     };
   }
